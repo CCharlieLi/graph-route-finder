@@ -1,0 +1,54 @@
+{
+  "name": "graph-route-finder",
+  "version": "1.0.0",
+  "description": "Find all/least-cost routes in weighted directed graph with given limitations ",
+  "main": "graph.js",
+  "scripts": {
+    "test": "make test",
+    "test-coveralls": "make test-coveralls"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CCharlieLi/graph-route-finder.git"
+  },
+  "keywords": [
+    "graph",
+    "bfs",
+    "weighted",
+    "directed",
+    "graph",
+    "dijkstra",
+    "routes",
+    "nodes"
+  ],
+  "author": {
+    "name": "Chao Li",
+    "email": "ccharlieli@live.com",
+    "url": "https://www.charlieli.cn/"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/CCharlieLi/graph-route-finder/issues"
+  },
+  "homepage": "https://github.com/CCharlieLi/graph-route-finder#readme",
+  "devDependencies": {
+    "@commitlint/cli": "^11.0.0",
+    "@commitlint/config-conventional": "^11.0.0",
+    "coveralls": "^3.1.0",
+    "eslint": "^7.10.0",
+    "eslint-config-prettier": "^6.12.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "husky": "^4.3.0",
+    "mocha": "^8.1.3",
+    "nyc": "^15.1.0",
+    "prettier": "^2.1.2",
+    "should": "^13.2.3"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "pre-commit": "make lint",
+      "pre-push": "make lint"
+    }
+  }
+}

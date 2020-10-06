@@ -1,0 +1,23 @@
+sudo: required
+language: node_js
+cache:
+  yarn: true
+notifications:
+  email: false
+addons:
+  apt:
+    sources:
+      - ubuntu-toolchain-r-test
+    packages:
+      - g++-4.8
+services:
+  - docker
+env:
+  global:
+    - CXX=g++-4.8
+    - NODE_ENV="test"
+node_js:
+  - "10"
+  - "12"
+script:
+  - yarn test-coveralls
