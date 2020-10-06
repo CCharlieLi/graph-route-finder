@@ -178,4 +178,4 @@ const routes = graph.findRoutes('E', 'E', { routeLimit: 1 });
 yarn test
 ```
 
-## [License]()
+## [License](https://github.com/CCharlieLi/graph-route-finder/blob/main/LICENSE)

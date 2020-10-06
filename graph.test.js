@@ -1,7 +1,7 @@
 'use strict';
 
 require('should');
-const Graph = require('./graph');
+const Graph = require('./');
 
 describe('Graph', () => {
   let graph;
