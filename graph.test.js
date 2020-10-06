@@ -34,7 +34,7 @@ describe('Graph', () => {
     graph.to('B').should.deepEqual({ A: { B: 1 }, E: { B: 3 } });
   });
 
-  it('should set a new path', () => {
+  it('should set a new route', () => {
     graph.set('A', 'J', 12);
     graph.nodes.should.deepEqual({
       A: { B: 1, C: 4, D: 10, J: 12 },
@@ -46,7 +46,7 @@ describe('Graph', () => {
     });
   });
 
-  it('should update a existent path', () => {
+  it('should update a existent route', () => {
     graph.set('A', 'B', 12);
     graph.nodes.should.deepEqual({
       A: { B: 12, C: 4, D: 10 },
@@ -58,7 +58,7 @@ describe('Graph', () => {
     });
   });
 
-  it('should remove a existent path', () => {
+  it('should remove a existent route', () => {
     graph.remove('A', 'B');
     graph.nodes.should.deepEqual({
       A: { C: 4, D: 10 },
@@ -70,7 +70,7 @@ describe('Graph', () => {
     });
   });
 
-  it('should remove a non-existent path', () => {
+  it('should remove a non-existent route', () => {
     graph.remove('A', 'J');
     graph.nodes.should.deepEqual({
       A: { B: 1, C: 4, D: 10 },
