@@ -112,6 +112,21 @@ console.log(graph.nodes);
 // }
 ```
 
+### Calculate cost for given route(a array of nodes)
+
+#### graph.calculate([nodeName1, nodeName2, ...])
+
+This function will go through each node to the next from given node array to calculate cost for the whole route, if a path is not found in the route, `No​ ​Such​ ​Route` error will be returned.
+
+```js
+graph.calculate(['E', 'A', 'C', 'F'])
+// 8
+
+graph.calculate(['A', 'D', 'F']);
+// Error { message: 'No​ ​Such​ ​Route }
+```
+
+
 ### Find routes for given start node and end node
 
 #### graph.findRoutes(startNode, endNode [, options ])

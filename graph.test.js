@@ -134,4 +134,20 @@ describe('Graph', () => {
     });
     routes.length.should.be.equal(22);
   });
+
+  it('should get cost for given route', () => {
+    graph.calculate(['A', 'B', 'E']).should.be.equal(4);
+
+    graph.calculate(['A', 'D']).should.be.equal(10);
+
+    graph.calculate(['E', 'A', 'C', 'F']).should.be.equal(8);
+  });
+
+  it('should get error when route not found', () => {
+    try {
+      graph.calculate(['A', 'D', 'F']);
+    } catch (err) {
+      err.message.should.be.equal('No​ ​Such​ ​Route');
+    }
+  });
 });

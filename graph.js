@@ -112,4 +112,27 @@ module.exports = class Graph {
     // filter routes by stops
     return targetRoutes.filter((route) => route.nodes.length <= stopLimit + 1);
   }
+
+  /**
+   * Calculate cost for given route
+   * @param  {array} nodesArr
+   */
+  calculate(nodesArr) {
+    nodesArr = Array.isArray(nodesArr) ? nodesArr : [nodesArr];
+
+    // reform nodesArrpaths -> [[A,B],[B,C],...]
+    const paths = nodesArr.reduce((acc, cur, index) => {
+      if (nodesArr[index + 1] == null) return acc;
+      return acc.concat([[cur, nodesArr[index + 1]]]);
+    }, []);
+
+    // calculate cost
+    return paths.reduce((acc, path) => {
+        const nodes = this.from(path[0]);
+        if (nodes && nodes[path[1]]) return acc + parseInt(nodes[path[1]], 10);
+        throw new Error('No​ ​Such​ ​Route');
+      },
+      0
+    );
+  }
 };
